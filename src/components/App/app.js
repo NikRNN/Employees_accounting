@@ -12,21 +12,43 @@ class App extends Component {
     super(props);
     this.state = {
       data: [
-        { name: "Иван Петров", salary: 90000, increase: false, id: uuidv4() },
-        { name: "Петр Сидоров", salary: 110000, increase: true, id: uuidv4() },
-        { name: "Май Абрикосов", salary: 85000, increase: true, id: uuidv4() },
+        {
+          name: "Иван Петров",
+          salary: 90000,
+          increase: false,
+          id: uuidv4(),
+          rise: false,
+        },
+        {
+          name: "Петр Сидоров",
+          salary: 110000,
+          increase: false,
+          id: uuidv4(),
+          rise: false,
+        },
+        {
+          name: "Май Абрикосов",
+          salary: 85000,
+          increase: false,
+          id: uuidv4(),
+          rise: false,
+        },
       ],
     };
   }
 
   addItem = (e) => {
     e.preventDefault();
+    if (e.target.name.value === "" || e.target.salary.value === "") {
+      return;
+    }
     this.setState(({ data }) => {
       const newItem = {
         name: e.target.name.value,
-        salary: Number(e.target.salary.value),
+        salary: e.target.salary.value,
         increase: false,
         id: uuidv4(),
+        rise: false,
       };
       return {
         data: [...data, newItem],
@@ -43,14 +65,48 @@ class App extends Component {
     });
   };
 
+  onToggleIncrease = (id) => {
+    this.setState(({ data }) => {
+      const newArr = data.map((item) => {
+        return item.id === id ? { ...item, increase: !item.increase } : item;
+      });
+      return { data: newArr };
+    });
+  };
+
+  onToggleRise = (id) => {
+    this.setState(({ data }) => {
+      const newArr = data.map((item) => {
+        return item.id === id ? { ...item, rise: !item.rise } : item;
+      });
+      return { data: newArr };
+    });
+  };
+
+  onNumberOfEmployees = () => this.state.data.length;
+
+  onNumbersofIncrease = () => {
+    let count = 0;
+    this.state.data.forEach((item) => (item.increase ? (count += 1) : ""));
+    return count;
+  };
+
   render() {
     return (
       <div className="app">
-        <AppHeader />
+        <AppHeader
+          onNumberOfEmployees={this.onNumberOfEmployees}
+          onNumbersOfIncrease={this.onNumbersofIncrease}
+        />
         <div className="search-panel">
           <SearchPanel />
           <AppFilter />
-          <EmployeersList data={this.state.data} deleteItem={this.deleteItem} />
+          <EmployeersList
+            data={this.state.data}
+            deleteItem={this.deleteItem}
+            onToggleIncrease={this.onToggleIncrease}
+            onToggleRise={this.onToggleRise}
+          />
           <EmployeesAddForm addItem={this.addItem} />
         </div>
       </div>

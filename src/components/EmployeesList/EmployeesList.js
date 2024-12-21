@@ -1,5 +1,5 @@
-import "./employeers-list.css";
-import EmployeersListItem from "../EmployeersListItem/EmployeersListItem";
+import "./employees-list.css";
+import EmployeersListItem from "../EmployeesListItem/EmployeesListItem";
 
 const EmployeersList = ({
   data,

@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import AppHeader from "../AppHeader/AppHeader.js";
 import SearchPanel from "../SearchPanel/SearchPanel.js";
 import AppFilter from "../AppFilter/AppFilter.js";
-import EmployeersList from "../EmployeersList/EmployeersList.js";
-import EmployeesAddForm from "../EmployeersAddForm/EmployeersAddForm.js";
+import EmployeersList from "../EmployeesList/EmployeesList.js";
+import EmployeesAddForm from "../EmployeesAddForm/EmployeesAddForm.js";
 
 class App extends Component {
   constructor(props) {

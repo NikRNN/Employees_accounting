@@ -34,6 +34,8 @@ class App extends Component {
           rise: false,
         },
       ],
+      term: "",
+      filterButton: "",
     };
   }
 
@@ -91,7 +93,46 @@ class App extends Component {
     return count;
   };
 
+  searchEmp = (items, term) => {
+    if (term.length === 0) {
+      return items;
+    }
+    return items.filter((item) => {
+      return item.name.toLowerCase().includes(term.toLowerCase());
+    });
+  };
+
+  updateTerm = (term) => {
+    return this.setState({ term: term });
+  };
+
+  onFilterEmployees = (items, filter) => {
+    let filtered;
+    switch (filter) {
+      case "increaseEmployees":
+        filtered = items.filter((item) => item.increase === true);
+        break;
+      case "bigSalary":
+        filtered = items.filter((item) => item.salary > 100000);
+        break;
+      default:
+        filtered = items;
+        break;
+    }
+    return filtered;
+  };
+
+  updateFilter = (filter) => {
+    return this.setState({ filterButton: filter });
+  };
+
   render() {
+    const { data, term } = this.state;
+    const searchElements = this.onFilterEmployees(
+      this.searchEmp(data, term),
+      this.state.filterButton
+    );
+
     return (
       <div className="app">
         <AppHeader
@@ -99,10 +140,10 @@ class App extends Component {
           onNumbersOfIncrease={this.onNumbersofIncrease}
         />
         <div className="search-panel">
-          <SearchPanel />
-          <AppFilter />
+          <SearchPanel updateTerm={this.updateTerm} />
+          <AppFilter updateFilter={this.updateFilter} />
           <EmployeersList
-            data={this.state.data}
+            data={searchElements}
             deleteItem={this.deleteItem}
             onToggleIncrease={this.onToggleIncrease}
             onToggleRise={this.onToggleRise}

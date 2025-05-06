@@ -1,11 +1,11 @@
 import "./app.css";
 import { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
-import AppHeader from "../AppHeader/AppHeader.js";
-import SearchPanel from "../SearchPanel/SearchPanel.js";
-import AppFilter from "../AppFilter/AppFilter.js";
-import EmployeersList from "../EmployeesList/EmployeesList.js";
-import EmployeesAddForm from "../EmployeesAddForm/EmployeesAddForm.js";
+import AppHeader from "../AppHeader/AppHeader.jsx";
+import SearchPanel from "../SearchPanel/SearchPanel.jsx";
+import AppFilter from "../AppFilter/AppFilter.jsx";
+import EmployeersList from "../EmployeesList/EmployeesList.jsx";
+import EmployeesAddForm from "../EmployeesAddForm/EmployeesAddForm.jsx";
 
 class App extends Component {
   constructor(props) {

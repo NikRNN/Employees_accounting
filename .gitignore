@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Директории и файлы сборки
 node_modules
 dist
 dist-ssr
@@ -22,3 +23,19 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Зависимости и настройки окружения
+/.pnp
+.pnp.js
+
+# Тесты
+/coverage
+
+# Сборка
+/build
+
+# Файлы окружения
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

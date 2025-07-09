@@ -24,10 +24,10 @@ src/
 
 =======
 
-![Интерфейс приложения](./screenshots/screenshot1.png)
-![Интерфейс приложения](./screenshots/screenshot2.png)
-![Интерфейс приложения](./screenshots/screenshot3.png)
-![Интерфейс приложения](./screenshots/screenshot4.png)
+![Интерфейс приложения](./src/screenshots/screenshot1.png)
+![Сотрудники на повышение](./src/screenshots/screenshot2.png)
+![Сотрудники с зарплатой более 100 000 руб.](./src/screenshots/screenshot3.png)
+![Добавление нового сотрудника](./src/screenshots/screenshot4.png)
 
 **О проекте**
 

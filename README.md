@@ -3,21 +3,33 @@
 **Основные каталоги**
 
 ```
-public/
-├── favicon.ico
+├── public/
+│   ├── favicon.ico
+│   ├── manifest.json
+│   └── vite.svg
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── App/
+│   │   ├── AppFilter/
+│   │   ├── AppHeader/
+│   │   ├── EmployeesAddForm/
+│   │   ├── EmployeesList/
+│   │   ├── EmployeesListItem/
+│   │   └── SearchPanel/
+│   ├── screenshots/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── eslint.config.js
 ├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
 
-src/
-├── components/
-│ ├── AppFilter/ # Компоненты фильтрации сотрудников
-│ ├── AppInfo/ # Общая информация о сотрудниках
-│ ├── EmployeesAddForm/ # Форма добавления сотрудников
-│ ├── EmployeesList/ # Список сотрудников
-│ ├── EmployeesListItem/ # Отдельный элемент списка
-│ └── SearchPanel/ # Панель поиска
-├── App.js # Основной компонент приложения
-├── index.js # Точка входа
-├── index.css # Стили приложения
 
 
 ```

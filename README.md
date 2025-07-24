@@ -47,10 +47,11 @@
 
 **Технологии**
 
-- React (классовые компоненты)
-- JavaScript
+- Vite
+- React (классовые компоненты, react-dom)
+- uuid
 - CSS
-- vite
+- eslint (eslint-plugin-react-hooks, eslint-plugin-react-refresh)
 
 **Установка**
 
